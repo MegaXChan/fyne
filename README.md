@@ -154,3 +154,12 @@ More documentation is available at the [Fyne developer website](https://develope
 
 You can find many example applications in the [examples repository](https://github.com/fyne-io/examples/).
 Alternatively a list of applications using fyne can be found at [our website](https://apps.fyne.io/).
+
+# 中文乱码解决
+```
+	sysType := runtime.GOOS
+	if strings.EqualFold(sysType,"windows"){
+		sysroot := os.Getenv("SystemRoot")
+		os.Setenv("FYNE_FONT",sysroot + "/Fonts/msyh.ttc")
+	}
+```
